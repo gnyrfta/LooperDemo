@@ -1,0 +1,448 @@
+<!--
+Equally weighted children
+
+To create a linear layout in which each child uses the same amount of
+space on the screen, set the android:layout_height of each view to "0dp"
+(for a vertical layout) or the android:layout_width of each view to "0dp"
+(for a horizontal layout). Then set the android:layout_weight of each view
+ to "1".
+
+To do - add a spinner for timelength. 
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.androidtemplate.MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/button_upper_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_custom"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/pbcrichton_flat_button"
+                android:text="@string/bpm_increase" />
+
+            <Button
+                android:id="@+id/button_upper_middle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_custom"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/pbcrichton_flat_button"
+                android:text="@string/load" />
+
+            <Button
+                android:id="@+id/button_upper_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_custom"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/pbcrichton_flat_button"
+                android:text="@string/play" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/button_lower_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_custom"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/pbcrichton_flat_button"
+                android:text="@string/bpm_decrease" />
+
+            <Button
+                android:id="@+id/button_lower_middle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_custom"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/pbcrichton_flat_button"
+                android:text="@string/clear_list" />
+
+            <Button
+                android:id="@+id/button_lower_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_custom"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/pbcrichton_flat_button"
+                android:text="@string/stop" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <RadioGroup
+                android:id="@+id/radio_note_length"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                <RadioButton
+                    android:id="@+id/whole_note"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/radio_whole" />
+
+                <RadioButton
+                    android:id="@+id/half_note"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/radio_half" />
+
+                <RadioButton
+                    android:id="@+id/quarter_note"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/radio_quarter" />
+
+                <RadioButton
+                    android:id="@+id/eighth_note"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/radio_eighth" />
+            </RadioGroup>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/bpm_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bpm_default" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/playlist_text_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/sounds_in_loop" />
+
+            <Button
+                android:id="@+id/increaseDuration_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_2"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/increase_button" />
+
+            <Button
+                android:id="@+id/decreaseDuration_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_3"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/decrease_button" />
+
+            <Button
+                android:id="@+id/deleteSound_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_4"                
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/decrease_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/playlist_text_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/sounds_in_loop" />
+
+            <Button
+                android:id="@+id/increaseDuration_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_2"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/increase_button" />
+
+            <Button
+                android:id="@+id/decreaseDuration_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+              	android:background="@drawable/button_custom_3"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/decrease_button" />
+
+            <Button
+                android:id="@+id/deleteSound_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_4"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/decrease_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/playlist_text_3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/sounds_in_loop" />
+
+            <Button
+                android:id="@+id/increaseDuration_3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_2"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/increase_button" />
+
+            <Button
+                android:id="@+id/decreaseDuration_3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_3"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/decrease_button" />
+
+            <Button
+                android:id="@+id/deleteSound_3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_4"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/decrease_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/playlist_text_4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/sounds_in_loop" />
+
+            <Button
+                android:id="@+id/increaseDuration_4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_2"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/increase_button" />
+
+            <Button
+                android:id="@+id/decreaseDuration_4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_3"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/decrease_button" />
+
+            <Button
+                android:id="@+id/deleteSound_4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_4"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/decrease_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/playlist_text_5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/sounds_in_loop" />
+
+            <Button
+                android:id="@+id/increaseDuration_5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_2"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/increase_button" />
+
+            <Button
+                android:id="@+id/decreaseDuration_5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+               	android:background="@drawable/button_custom_3"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/decrease_button" />
+
+            <Button
+                android:id="@+id/deleteSound_5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_4"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/decrease_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/playlist_text_6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/sounds_in_loop" />
+
+            <Button
+                android:id="@+id/increaseDuration_6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_2"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/increase_button" />
+
+            <Button
+                android:id="@+id/decreaseDuration_6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_3"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/decrease_button" />
+
+            <Button
+                android:id="@+id/deleteSound_6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_4"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/decrease_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/playlist_text_7"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/sounds_in_loop" />
+
+            <Button
+                android:id="@+id/increaseDuration_7"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_2"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/increase_button" />
+
+            <Button
+                android:id="@+id/decreaseDuration_7"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_3"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/decrease_button" />
+
+            <Button
+                android:id="@+id/deleteSound_7"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_4"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/decrease_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/playlist_text_8"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/sounds_in_loop" />
+
+            <Button
+                android:id="@+id/increaseDuration_8"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_2"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/increase_button" />
+
+            <Button
+                android:id="@+id/decreaseDuration_8"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+               	android:background="@drawable/button_custom_3"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/decrease_button" />
+
+            <Button
+                android:id="@+id/deleteSound_8"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_custom_4"
+                android:contentDescription="@string/desc_button"
+                android:src="@drawable/decrease_button" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

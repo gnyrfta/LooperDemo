@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LooperDemo</string>
+    <string name="bpm_default">BPM: 90</string>
+    <string name="action_settings">Change text</string>
+    <string name="bpm_increase">BPM+</string>
+    <string name="bpm_decrease">BPM-</string>
+    <string name="load">Add selected sound</string>
+    <string name="desc_button">A button</string>
+    <string name="sounds_in_loop"> test </string>
+    <string name="play"> Play </string>
+    <string name="stop"> Stop </string>
+    <string name="clear_list">Clear Loop</string>
+    <string name="radio_whole">Full note</string>
+    <string name="radio_half">Half note</string>
+    <string name="radio_quarter">Quarter note</string>
+    <string name="radio_eighth">Eighth note</string>
+        
+    <string-array name="sounds_array">
+        <item>Piano C</item>
+        <item>Piano D</item>
+        <item>Piano F</item>
+        <item>Piano G</item>
+        <item>claps </item>    
+        <item>cowbell </item>                            
+        <item>cymbal </item>                            
+        <item>hi-hat closed </item>                            
+        <item>hi-hat open </item>                            
+        <item>kick drum</item>                            
+        <item>snare drum</item>                            
+        <item>stick drum</item>                            
+        
+    </string-array>
+</resources>
